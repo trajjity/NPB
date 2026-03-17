@@ -17,12 +17,12 @@
 <body>
     <header class="main-header">
         <div class="container header-content">
-            <div class="logo">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit; user-select: none; -webkit-user-select: none; outline: none; -webkit-tap-highlight-color: transparent; cursor: pointer;">
                 <img src="npb.jpg" alt="No Push Backs Logo" class="logo-img">
                 <div class="logo-text">
-                    <h1>No Push Backs</h1>
+                    <h1 style="margin: 0;">No Push Backs</h1>
                 </div>
-            </div>
+            </a>
             <nav class="main-nav">
                 <a href="#hero">Home</a>
                 <a href="#barbers">Our Barbers</a>
@@ -89,12 +89,22 @@
             </div>
         </section>
 
+        <section id="barbers" class="barbers-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Barbers</h2>
+                    <p>Click on any barber to view their portfolio and book your appointment directly.</p>
+                </div>
+                <div id="barber-grid" class="barber-grid"></div>
+            </div>
+        </section>
+
         
         <section class="reviews-section fade-in-section">
             <div class="container">
                 <div class="reviews-header">
                     <div class="google-badge">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" width="28" height="28">
+                        <img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google" width="28" height="28">
                         <div>
                             <h2>Excellent</h2>
                             <div class="stars">
@@ -156,16 +166,6 @@
                         <p class="review-text">"Family-friendly environment and every barber in there has serious skills. My kids refuse to go anywhere else now. Highly recommend booking ahead."</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="barbers" class="barbers-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Barbers</h2>
-                    <p>Click on any barber to view their portfolio and book your appointment directly.</p>
-                </div>
-                <div id="barber-grid" class="barber-grid"></div>
             </div>
         </section>
     </main>
