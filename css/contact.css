@@ -110,3 +110,47 @@ textarea.form-control {
         font-size: 2rem;
     }
 }
+
+/* Custom Select Modernization */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 48px;
+    cursor: pointer;
+    background-color: var(--bg-page); /* solid background */
+    font-weight: 500;
+}
+
+.custom-select:hover {
+    border-color: var(--text-secondary);
+    background-color: var(--surface-bg);
+}
+
+.select-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-fast);
+}
+
+.custom-select:focus + .select-icon {
+    color: var(--accent-color);
+}
+
+.custom-select option {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    padding: 12px;
+}
