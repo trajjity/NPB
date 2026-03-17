@@ -4,7 +4,7 @@ var barbers = [
     bio: 'Tony is the owner of No Push Backs. He built this shop from the ground up and brings that same standard to every cut.',
     image: 'Tony.jpg',
     bookingLink: 'https://tonycutz.as.me/schedule/16de057f',
-    instagramLink: 'https://www.instagram.com/nopushbacks',
+    instagramLink: 'https://www.instagram.com/tony.sautner/',
     gallery: [] },
   { id: 'juan-barreto', name: 'Juan Barreto',
     bio: 'Juan is known for razor-sharp fades and attention to detail. Every client walks out looking right.',
