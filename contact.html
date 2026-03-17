@@ -40,7 +40,7 @@
         <div class="contact-container fade-in-section">
             <div class="contact-header">
                 <h1>Get in Touch</h1>
-                <p>Have a question about a cut or a booking? Drop us a line below.</p>
+                <p>Have a question about a cut, a booking, or looking to join our team? Drop us a line below.</p>
             </div>
             
             <!-- We use Web3Forms for absolutely free, secure static-site forms without backends. -->
@@ -48,7 +48,14 @@
                 
                 <!-- Replace this access key with yours from web3forms.com -->
                 <input type="hidden" name="access_key" value="4d45abcb-7265-4682-b474-7f4f15f897a1">
-                <input type="hidden" name="subject" value="New Website Inquiry: No Push Backs">
+                <div class="form-group" style="margin-bottom: 8px;">
+                    <label for="subject">What are you getting in touch about?</label>
+                    <select id="subject" name="subject" class="form-control" required style="appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239AA0A6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>'); background-repeat: no-repeat; background-position: right 16px center;">
+                        <option value="General Inquiry / Booking">General Question / Booking</option>
+                        <option value="Employment: Want to work with us?">Looking to join the team (Employment)</option>
+                        <option value="Other Inquiry">Other</option>
+                    </select>
+                </div>
                 
                 <div class="form-group">
                     <label for="name">Full Name</label>
