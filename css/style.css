@@ -380,9 +380,9 @@ footer {
 /* ===== PAGE TRANSITION ANIMATIONS ===== */
 .fade-in-section {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
     visibility: hidden;
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
@@ -394,28 +394,30 @@ footer {
 
 /* Page load fade in */
 main, footer {
-    animation: fadeInPage 0.8s ease-out forwards;
+    animation: fadeInPage 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .main-header {
-    animation: fadeDownHeader 0.5s ease-out forwards;
+    animation: fadeDownHeader 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeInPage {
     from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(40px);
+        filter: blur(8px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+        filter: blur(0);
     }
 }
 
 @keyframes fadeDownHeader {
     from {
         opacity: 0;
-        transform: translateY(-15px);
+        transform: translateY(-30px);
     }
     to {
         opacity: 1;

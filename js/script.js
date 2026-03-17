@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click',function(e){var h=this.getAttribute('href');if(!h||h==='#'||h.startsWith('#book-')||this.id==='modal-booking-link')return;e.preventDefault();var t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth'});});
+    a.addEventListener('click',function(e){var h=this.getAttribute('href');if(!h||h==='#'||h.startsWith('#book-')||this.id==='modal-booking-link'||this.id==='modal-instagram-link')return;e.preventDefault();var t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth'});});
   });
 });
 
