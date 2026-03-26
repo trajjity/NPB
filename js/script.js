@@ -30,7 +30,7 @@ var barbers = [
     bookingLink: 'https://booksy.com/en-us/447774_sb-cutz_barber-shop_33218_bristol',
     instagramLink: 'https://www.instagram.com/bassprocutz',
     gallery: [] },
-  { id: 'anthony-galhhber', name: 'Anthony Galhhber',
+  { id: 'anthony-gallagher', name: 'Anthony Gallagher',
     bio: 'Anthony brings energy to every appointment. Steady hand, sharp eye, and you walk out looking fresh every time.',
     image: 'anthony.jpg',
     bookingLink: 'https://antgallagher12.booksy.com/a',
