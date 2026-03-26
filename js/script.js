@@ -100,43 +100,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ==== SCROLL ANIMATIONS ====
 document.addEventListener('DOMContentLoaded', function() {
-    // Add fade-in classes to sections
-    const sectionsToAnimate = [
-        document.querySelector('.hero-content'),
-        document.querySelector('.location-bar'),
-        document.querySelector('.reviews-section'),
-        document.querySelector('.section-header'),
-        ...document.querySelectorAll('.barber-card')
-    ];
+    // Delay slightly so dynamically-created elements exist
+    setTimeout(function() {
+        var sectionsToAnimate = [
+            document.querySelector('.hero-content'),
+            document.querySelector('.location-bar'),
+            document.querySelector('.reviews-section'),
+            document.querySelector('.section-header')
+        ];
 
-    sectionsToAnimate.forEach((el, index) => {
-        if(el) {
-            el.classList.add('fade-in-section');
-            // Stagger cards
-            if(el.classList.contains('barber-card')) {
-                el.style.transitionDelay = `${(index % 3) * 150}ms`;
-            }
-        }
-    });
+        // Also animate barber cards with stagger
+        var cards = document.querySelectorAll('.barber-card');
+        cards.forEach(function(card, i) {
+            card.classList.add('fade-in-section');
+            card.style.transitionDelay = (i * 150) + 'ms';
+        });
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
+        sectionsToAnimate.forEach(function(el) {
+            if(el) {
+                el.classList.add('fade-in-section');
             }
         });
-    }, observerOptions);
 
-    document.querySelectorAll('.fade-in-section').forEach(section => {
-        observer.observe(section);
-    });
+        var observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-section').forEach(function(section) {
+            observer.observe(section);
+        });
+    }, 100);
 });
 
 
@@ -144,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ===== REVIEWS CAROUSEL ENGINE =====
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   var gIcon = '<svg class="g-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.64 12.2c0-.82-.07-1.62-.2-2.4H12v4.56h6.52a5.56 5.56 0 0 1-2.42 3.65v3.04h3.91c2.3-2.12 3.63-5.24 3.63-8.85z"/><path fill="#34A853" d="M12 24c3.27 0 6.02-1.08 8.03-2.93l-3.91-3.04c-1.09.73-2.48 1.16-4.12 1.16-3.17 0-5.85-2.14-6.81-5.02H1.14v3.13A11.96 11.96 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.19 14.17a7.22 7.22 0 0 1 0-4.34V6.7H1.14a11.97 11.97 0 0 0 0 10.6l4.05-3.13z"/><path fill="#EA4335" d="M12 4.81c1.78 0 3.38.61 4.64 1.8l3.48-3.48A11.95 11.95 0 0 0 12 0 11.96 11.96 0 0 0 1.14 6.7l4.05 3.13c.96-2.88 3.64-5.02 6.81-5.02z"/></svg>';
   var colors = ['#1a73e8','#ea4335','#34a853','#fbbc05','#1a73e8','#ea4335','#34a853','#fbbc05','#1a73e8'];
 
@@ -218,8 +222,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Auto-rotate every 6 seconds
-  setInterval(function() {
+  setIntervaldocument.addEventListener('DOMContentLoaded', function() {
     var next = (currentSlide + 1) % totalSlides;
     goToSlide(next);
   }, 6000);
-})();
+});
