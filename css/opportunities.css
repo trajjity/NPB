@@ -331,17 +331,38 @@ input[type="date"].form-control {
     }
 }
 
-/* Disabled tab */
+/* Disabled tab with blur + lock */
 .opp-tab-disabled {
-    opacity: 0.4;
+    position: relative;
     cursor: not-allowed;
     pointer-events: none;
-    color: #666 !important;
-    background: transparent !important;
+    color: #777 !important;
+    background: rgba(128, 128, 128, 0.06) !important;
     box-shadow: none !important;
+    filter: blur(0.5px);
+    opacity: 0.55;
 }
 
 .opp-tab-disabled:hover {
-    background: transparent !important;
-    color: #666 !important;
+    background: rgba(128, 128, 128, 0.06) !important;
+    color: #777 !important;
+}
+
+.tab-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: #333;
+    color: #999;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 4px;
+}
+
+/* Captcha */
+.captcha-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
 }

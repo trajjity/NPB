@@ -125,6 +125,23 @@ ${data.about}
 </body>
 </html>`;
 
+  // Verify Turnstile captcha
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret && data.captchaToken) {
+    const captchaRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        secret: turnstileSecret,
+        response: data.captchaToken
+      })
+    });
+    const captchaData = await captchaRes.json();
+    if (!captchaData.success) {
+      return res.status(400).json({ error: 'Captcha verification failed' });
+    }
+  }
+
   try {
     // Send confirmation to applicant
     const applicantRes = await fetch('https://api.resend.com/emails', {
