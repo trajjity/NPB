@@ -96,8 +96,8 @@
                             <input type="date" id="career-dob" name="Date of Birth" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="career-address">Address</label>
-                            <input type="text" id="career-address" name="Address" class="form-control" placeholder="City, State" required>
+                            <label for="career-address">Street Address</label>
+                            <input type="text" id="career-address" name="Address" class="form-control" placeholder="123 Main St, Bristol, PA 19007" required>
                         </div>
                     </div>
 
@@ -138,6 +138,24 @@
                     <div class="form-group">
                         <label for="career-price">How much do you charge for a haircut? (if applicable)</label>
                         <input type="text" id="career-price" name="Haircut Price" class="form-control" placeholder="e.g. $35">
+                    </div>
+
+<div class="form-group">
+                        <label for="career-hear">How did you hear about us?</label>
+                        <div class="select-wrapper">
+                            <select id="career-hear" name="How Did You Hear" class="form-control custom-select" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Google Search">Google Search</option>
+                                <option value="Friend or Family">Friend or Family</option>
+                                <option value="Walk-in / Drove By">Walk-in / Drove By</option>
+                                <option value="Another Barber">Another Barber</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="select-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -237,7 +255,8 @@
                 licensed: formData.get('Licensed'),
                 currentlyWorking: formData.get('Currently Working'),
                 haircutPrice: formData.get('Haircut Price'),
-                about: formData.get('About')
+                about: formData.get('About'),
+                hearAbout: formData.get('How Did You Hear')
             };
 
             // Check captcha

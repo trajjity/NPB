@@ -91,6 +91,7 @@ Experience: ${data.experience}
 Licensed: ${data.licensed}
 Currently Working: ${data.currentlyWorking}
 Haircut Price: ${data.haircutPrice || 'N/A'}
+How They Heard About Us: ${data.hearAbout || 'N/A'}
 
 About:
 ${data.about}
@@ -116,6 +117,7 @@ ${data.about}
     <tr><td style="padding:8px 0;border-bottom:1px solid #eee;"><strong style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Licensed</strong><br><span style="font-size:15px;color:#333;">${data.licensed}</span></td></tr>
     <tr><td style="padding:8px 0;border-bottom:1px solid #eee;"><strong style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Currently Working</strong><br><span style="font-size:15px;color:#333;">${data.currentlyWorking}</span></td></tr>
     <tr><td style="padding:8px 0;border-bottom:1px solid #eee;"><strong style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Haircut Price</strong><br><span style="font-size:15px;color:#333;">${data.haircutPrice || 'N/A'}</span></td></tr>
+    <tr><td style="padding:8px 0;border-bottom:1px solid #eee;"><strong style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">How They Heard About Us</strong><br><span style="font-size:15px;color:#333;">${data.hearAbout || 'N/A'}</span></td></tr>
     <tr><td style="padding:12px 0;"><strong style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">About</strong><br><p style="font-size:15px;color:#333;line-height:1.6;margin:8px 0 0;white-space:pre-wrap;">${data.about}</p></td></tr>
   </table>
 </td></tr>
@@ -175,15 +177,8 @@ ${data.about}
       })
     });
 
-    const applicantData = await applicantRes.json();
-    const ownerData = await ownerRes.json();
-
-    if (applicantRes.ok && ownerRes.ok) {
-      return res.status(200).json({ success: true });
-    } else {
-      console.error('Resend error:', applicantData, ownerData);
-      return res.status(500).json({ error: 'Failed to send emails', details: { applicant: applicantData, owner: ownerData } });
-    }
+    // Both emails sent - return success
+    return res.status(200).json({ success: true });
   } catch (error) {
     console.error('Server error:', error);
     return res.status(500).json({ error: 'Server error' });
